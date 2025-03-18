@@ -9,7 +9,6 @@ const getdata = async () => {
     let promise = await fetch(URL);
 
     let data = await promise.json();
-
 }
 
 const dropdowns = document.querySelectorAll(".dropdown select");
@@ -57,7 +56,7 @@ const updateExchangeRate = async () => {
     let val = toCurr.value;
     let rate = data.rates[val];
     let finalRate = amountVal * rate;
-    message.innerText = `${amountVal} ${currCode.value} = ${finalRate} ${toCurr.value}`;
+    message.innerText = `${amountVal} ${currCode.value} = ${finalRate.toFixed(2)} ${toCurr.value}`;
 }
 
 btn.addEventListener("click", (evt) => {
